@@ -10,14 +10,6 @@ export default class Arvore<T extends Object> {
 		if (this._raiz === null) {
 			this._raiz = novoNo;
 		} else {
-			// if (this._raiz.esquerda === null) {
-			// 	this.adicionarEsquerda(this._raiz, novoNo);
-			// } else if (this._raiz.direita === null) {
-			// 	this.adicionarDireita(this._raiz, novoNo);
-			// } else if (this.estarOcupado(this._raiz)) {
-			// 	this.adicionarEsquerda(this._raiz.esquerda, novoNo);
-			// }
-
 			this.adicionarNo(this._raiz, novoNo); // joao , ana
 		}
 
@@ -25,6 +17,14 @@ export default class Arvore<T extends Object> {
 	}
 
 	private adicionarNo(noBase: No<T>, noASerAdicionado: No<T>) {
+		if (this._ehMaior(noASerAdicionado.elemento, noBase.elemento)) {
+			this.adicionarEsquerda(noBase, noASerAdicionado);
+		} else {
+			this.adicionarDireita(noBase, noASerAdicionado);
+		}
+
+		/* >>>>>>>>>>> */
+
 		if (noBase.esquerda === null) {
 			this.adicionarEsquerda(noBase, noASerAdicionado);
 		} else if (noBase.direita === null) {
@@ -32,6 +32,10 @@ export default class Arvore<T extends Object> {
 		} else if (this.estarOcupado(noBase)) {
 			this.adicionarNo(noBase.esquerda, noASerAdicionado); // maria , ana
 		}
+	}
+
+	private _ehMaior(valor1: T, valor2: T): boolean {
+		return false;
 	}
 
 	private estarOcupado(no: No<T>): boolean {

@@ -25,9 +25,21 @@ arvore.adicionar(aluno8);
 arvore.adicionar(aluno9);
 arvore.adicionar(aluno10);
 
-console.log(arvore.raiz?.elemento);
-console.log(arvore.tamanho);
+// console.log(arvore.raiz?.elemento);
+// console.log(arvore.tamanho);
 
-console.log(arvore.raiz?.esquerda?.elemento);
-console.log(arvore.raiz?.direita?.elemento);
-console.log(arvore.raiz?.esquerda?.esquerda?.elemento);
+// console.log(arvore.raiz?.esquerda?.elemento);
+// console.log(arvore.raiz?.direita?.elemento);
+// console.log(arvore.raiz?.esquerda?.esquerda?.elemento);
+
+console.log(arvore.raiz?.esquerda?.esquerda?.esquerda?.esquerda?.esquerda);
+/*
+
+                                    João 
+                            Maria         José
+                        Ana      Pedro
+                Paulo       Carla
+        Mariana        Lucas
+    Luana
+
+*/
